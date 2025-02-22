@@ -1,7 +1,7 @@
 # Create a new repository
 resource "github_repository" "terraform" {
   name        = "terraform-laboratory"
-  description = "Arquitics Lab 2"
+  description = "Arquitectura de software 2025"
   
   # Set repository visibility
   visibility = "public"
@@ -14,13 +14,13 @@ resource "github_repository" "terraform" {
   allow_merge_commit = true
   allow_squash_merge = true
   allow_rebase_merge = true
-
-   # Configure template, I'm using AWS terraform template
-  template {
-    owner      = "aws-ia"
-    repository = "terraform-repo-template"
-  }
   
+  # Configure template, https://github.com/brrodriguezd/proyecto26.github.io
+  template {
+    owner      = "brrodriguezd"
+    repository = "proyecto26.github.io"
+  }
+
   pages{
     build_type = "workflow"
   }
