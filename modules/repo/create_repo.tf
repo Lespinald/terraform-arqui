@@ -21,6 +21,12 @@ resource "github_repository" "terraform" {
   }
 }
 
+ # Configure template, I'm using AWS terraform template
+  template {
+    owner      = "aws-ia"
+    repository = "terraform-repo-template"
+  }
+
 # Configure branch protection for main branch
 resource "github_branch_protection" "main" {
   repository_id = github_repository.terraform.node_id
