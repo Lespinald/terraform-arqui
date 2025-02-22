@@ -15,11 +15,12 @@ resource "github_repository" "terraform" {
   allow_squash_merge = true
   allow_rebase_merge = true
   
-  # Configure template, https://github.com/Lespinald/proyecto26.github.io
+  # Configure template
   template {
-    owner      = "Lespinald"
-    repository = "proyecto26.github.io"
-  }
+    owner = "github"
+    repository = "terraform-template-module"
+    include_all_branches = true
+    }
 
   pages{
     build_type = "workflow"
