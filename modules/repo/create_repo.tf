@@ -1,6 +1,6 @@
 # Create a new repository
 resource "github_repository" "terraform" {
-  name        = "terraform-lab"
+  name        = "terraform-laboratory"
   description = "Arquitics Lab 2"
   
   # Set repository visibility
