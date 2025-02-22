@@ -9,7 +9,7 @@ resource "github_repository" "example" {
     }
 }
 
-resource "github_repository" "example" {
+resource "github_repository" "exampletest" {
   name = "example"
   description = "My awesome web page"
   private = false
