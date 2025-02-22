@@ -2,13 +2,16 @@ terraform {
 	required_providers {
 		github = {
 			source = "integrations/github"
-			version = "~> 6.0"
+			version = "~> 5.0"
 		}
 	}
 }
 
 # Configure the GitHub Provider
-provider "github" {token = "Re-generated github token" }
+provider "github" {
+  organization = "myorgname"
+  token        = var.token
+}
 
 # Import all module configurations
 module "repository" {
