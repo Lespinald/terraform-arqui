@@ -18,4 +18,10 @@ resource "github_repository" "terraform-laboratory" {
   # Set repository visibility
   visibility = "public"
   
+  pages {
+    source {
+      branch = "master"
+      path = "/docs"
+    }
+  }
 }
