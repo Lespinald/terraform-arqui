@@ -15,7 +15,10 @@ provider "github" {
 
 # Import all module configurations
 module "repository" {
-  source = "./modules/repo"
+  source    = "./repo"
+  providers = {
+    github  = "github"
+  }
 }
 
 module "branches" {
