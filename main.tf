@@ -8,7 +8,7 @@ terraform {
 }
 
 # Configure the GitHub Provider
-provider "github" {}
+provider "github" { token = var.github_token}
 
 # Import all module configurations
 module "repository" {
