@@ -8,17 +8,11 @@ terraform {
 }
 
 # Configure the GitHub Provider
-provider "github" {
-  organization = "myorgname"
-  token        = var.token
-}
+provider "github" {}
 
 # Import all module configurations
 module "repository" {
-  source    = "./repo"
-  providers = {
-    github  = "github"
-  }
+  source = "./modules/repo"
 }
 
 module "branches" {
