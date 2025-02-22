@@ -11,7 +11,7 @@ terraform {
 provider "github" { token = var.github_token}
 
 # Create a new repository
-resource "github_repository" "terraform-laboratory-arquitics" {
+resource "github_repository" "terraform-laboratory" {
   name        = "terraform-laboratory"
   description = "Arquitectura de software 2025"
   
