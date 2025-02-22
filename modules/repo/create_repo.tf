@@ -14,18 +14,17 @@ resource "github_repository" "terraform" {
   allow_merge_commit = true
   allow_squash_merge = true
   allow_rebase_merge = true
-  
 
-  pages{
-    build_type = "workflow"
-  }
-}
-
- # Configure template, I'm using AWS terraform template
+   # Configure template, I'm using AWS terraform template
   template {
     owner      = "aws-ia"
     repository = "terraform-repo-template"
   }
+  
+  pages{
+    build_type = "workflow"
+  }
+}
 
 # Configure branch protection for main branch
 resource "github_branch_protection" "main" {
