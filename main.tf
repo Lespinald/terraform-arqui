@@ -10,18 +10,19 @@ terraform {
 # Configure the GitHub Provider
 provider "github" { token = var.github_token}
 
-# Create a new repository
-resource "github_repository" "terraform-laboratory" {
-  name        = "terraform-laboratory"
-  description = "Arquitectura de software 2025"
-  
-  # Set repository visibility
-  visibility = "public"
-  
-  pages {
-    source {
-      branch = "master"
-      path = "/docs"
-    }
-  }
+# Import all module configurations
+module "repository" {
+  source = "./modules/repo"
+}
+
+module "branches" {
+  source = "./modules/branches"
+  # Using the repository output as input for branches
+  depends_on = [module.repository]
+}
+
+module "labels" {
+  source = "./modules/labels"
+  # Using the repository output as input for branches
+  depends_on = [module.repository]
 }
