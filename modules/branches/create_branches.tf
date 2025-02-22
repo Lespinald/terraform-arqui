@@ -8,3 +8,7 @@ resource "github_branch" "branch2" {
   branch = "branch2"
 }
 
+resource "github_branch" "branch3" {
+  repository = "terraform-laboratory"
+  branch = "branch3"
+}
