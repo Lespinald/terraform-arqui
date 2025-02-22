@@ -15,11 +15,6 @@ resource "github_repository" "terraform" {
   allow_squash_merge = true
   allow_rebase_merge = true
   
-  # Configure template, https://github.com/Lespinald/proyecto26.github.io
-  template {
-    owner      = "Lespinald"
-    repository = "proyecto26.github.io"
-  }
 
   pages{
     build_type = "workflow"
